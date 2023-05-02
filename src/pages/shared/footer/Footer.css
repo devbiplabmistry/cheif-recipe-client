@@ -1,0 +1,15 @@
+.left-footer button {
+    position: absolute;
+    top: 106px;
+    left: 190px;
+
+}
+.left-footer{
+    position: relative;
+
+}
+.footer-wrapper{
+    padding: 80px;
+    background-color:rgba(0, 0, 0, 0.6);
+
+}
