@@ -15,9 +15,7 @@ const Chefs = ({chefs}) => {
                             <Card.Title><small>Year of Exp :{yearOfExperience}</small></Card.Title>
                             <Card.Title><small>Numbers of recipes :{noOfRecipee}</small></Card.Title>
                             <Card.Title><small>Likes :{likes}</small></Card.Title>
-                            <Card.Text>
-                              <small>{bio}</small>
-                            </Card.Text>
+                           
                             <Link to="/chef"><Button variant="primary">View Recipes Button</Button></Link>
                         </Card.Body>
                     </Card>

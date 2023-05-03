@@ -1,19 +1,25 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
 import Navigation from '../../pages/shared/navbar/Navigation';
-import { Outlet, useLoaderData } from 'react-router-dom';
+import {  useLoaderData } from 'react-router-dom';
 import { Container } from 'react-bootstrap';
+import ChiefRecipee from '../../pages/Chief/ChiefRecipee';
 
 const ChiefLayout = () => {
     const recipee=useLoaderData()
-const {_id,recipeeName,Ingredients,rating,recipees}=recipee
+
     console.log(recipee);
     return (
    <Container>
        <Navigation></Navigation>
        <div className="chief-wrapper">
         <div className="chief-banner">
-            <img src={} alt="" />
+            <h3>This is recipee page</h3>
+            {
+                recipee.map( r =><ChiefRecipee recipee={r} key="r._id"></ChiefRecipee>)
+            }
+        
+    
         </div>
 
        </div>
