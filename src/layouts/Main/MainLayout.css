@@ -18,3 +18,16 @@
     width: 100%;
     object-fit: cover;
 }
+.card-wrapper{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 15px;
+}
+
+.tips{
+    background: url(../../assets/reservation-bg.jpg);
+    padding: 80px;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
