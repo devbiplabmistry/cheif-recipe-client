@@ -8,6 +8,8 @@ import LoginLayout from '../layouts/loginLayout/LoginLayout';
 import Chief from '../pages/Chief/ChiefRecipee';
 import ChiefLayout from '../layouts/chiefLayout/ChiefLayout';
 import ChiefRecipee from '../pages/Chief/ChiefRecipee';
+import BlogPage from '../pages/blog/BlogPage';
+import WrongPages from '../pages/shared/404Page/WrongPages';
 
 
 const router = createBrowserRouter([
@@ -37,8 +39,16 @@ const router = createBrowserRouter([
     path: '/chef/:id',
     element: <ChiefLayout></ChiefLayout>,
     loader: ({params}) => fetch(`http://localhost:5000/recipee/${params.id}`)
-  }
+  },
+  {
+    path:"/blog",
+    element:<BlogPage></BlogPage>
+  },
+{
+  path:'*',
+  element:<WrongPages></WrongPages>
 
+}
 ]);
 
 export default router;
