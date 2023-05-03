@@ -5,7 +5,7 @@ import { Button, Card, Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 const Chefs = ({chefs}) => {
-    const {picture,name,recipee_title,recipee_img,recipee_description,yearOfExperience,noOfRecipee,bio,likes,rattings} =chefs
+    const {picture,_id,name,recipee_title,recipee_img,recipee_description,yearOfExperience,noOfRecipee,bio,likes,rattings} =chefs
     return (
         <Container>
               <Card >
@@ -15,8 +15,7 @@ const Chefs = ({chefs}) => {
                             <Card.Title><small>Year of Exp :{yearOfExperience}</small></Card.Title>
                             <Card.Title><small>Numbers of recipes :{noOfRecipee}</small></Card.Title>
                             <Card.Title><small>Likes :{likes}</small></Card.Title>
-                           
-                            <Link to="/chef"><Button variant="primary">View Recipes Button</Button></Link>
+                            <Link to={`/chef/${_id}`}><Button variant="primary">View Recipes Button</Button></Link>
                         </Card.Body>
                     </Card>
         </Container>
