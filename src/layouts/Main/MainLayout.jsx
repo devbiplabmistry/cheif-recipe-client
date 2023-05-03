@@ -26,7 +26,7 @@ const Main = () => {
             <div className="logo d-flex mt-5 mb-5">
                 <img src={logo} alt="logo" />
                 <div className="logo-content">
-                    <h2>Thatix</h2>
+                    <h2>BURGER HAT</h2>
                     <p>COOKING RECIPEE</p>
                 </div>
             </div>

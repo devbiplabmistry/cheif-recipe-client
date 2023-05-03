@@ -2,10 +2,11 @@
 import React from 'react';
 import { Button, Container, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { BsGithub, BsGoogle } from "react-icons/bs";
 
 const Register = () => {
     return (
-        <Container className='mt-5'>
+        <Container className='mt-5 d-flex'>
             <Form className='w-50 mx-auto'>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Name</Form.Label>
@@ -31,6 +32,14 @@ const Register = () => {
                 </Button>
                 <Link to="/login" className=' text-decoration-none fs-5 ms-2'>Already Have an Account ? </Link>
             </Form>
+            <div className="social-login">
+                    <Button variant="outline-secondary" className='d-block mb-2'>
+                        <BsGoogle className='fs-5 me-2'></BsGoogle>
+                        Sign In With Google</Button>
+                    <Button variant="outline-secondary" className='d-block mb-2'>
+                        <BsGithub className='fs-5 me-2'></BsGithub>
+                        Sign In With Github</Button>
+                </div>
         </Container>
     );
 };
