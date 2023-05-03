@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
 import Navigation from '../../pages/shared/navbar/Navigation';
-import { useLoaderData } from 'react-router-dom';
+
 import { Container } from 'react-bootstrap';
 import ChiefRecipee from '../../pages/Chief/ChiefRecipee';
 
