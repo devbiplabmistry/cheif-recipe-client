@@ -1,20 +1,54 @@
 /* eslint-disable no-unused-vars */
-import React from 'react';
+import React, { useContext } from 'react';
 import { Button, Container, Form } from 'react-bootstrap';
 import { BsGithub, BsGoogle } from 'react-icons/bs';
-import { Link } from 'react-router-dom';
+import { Link,useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../shared/authProvide/AuthProvider';
 
 const Login = () => {
+    const Navigate =useNavigate()
+    const {createEmailAndPassword,  googleSignIn} =useContext(AuthContext)
+    const handleEmailPassLogin =(event) =>{
+        event.preventDefault()
+        const form =event.target;
+        const email =form.email.value;
+        const password =form.password.value;
+        createEmailAndPassword(email,password)
+        .then((userCredential) => { 
+            const user = userCredential.user;
+            Navigate('/main')
+          })
+          .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            console.log(errorMessage);
+          });       
+    }
+const handleGoogleSignIn =()=>{
+    googleSignIn()
+    .then((result) => {
+        console.log(result);  
+      }).catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.log(errorMessage);    
+      });
+}
+
+
+
+
+
     return (
         <Container className='mt-5 d-flex'>
-            <Form className='w-50 mx-auto'>
+            <Form onSubmit={handleEmailPassLogin} className='w-50 mx-auto'>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
-                    <Form.Control type="email" placeholder="Enter email" />
+                    <Form.Control type="email" name='email' placeholder="Enter email" required/>
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                     <Form.Label>Password</Form.Label>
-                    <Form.Control type="password" placeholder="Password" />
+                    <Form.Control type="password" name='password' placeholder="Password" required/>
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicCheckbox">
                     <Form.Check type="checkbox" label="Check me out" />
@@ -25,7 +59,7 @@ const Login = () => {
                 <Link to="/register" className=' text-decoration-none fs-5 ms-2'>New in this website ? </Link>
             </Form>
             <div className="social-login">
-                    <Button variant="outline-secondary" className='d-block mb-2'>
+                    <Button onClick={handleGoogleSignIn} variant="outline-secondary" className='d-block mb-2'>
                         <BsGoogle className='fs-5 me-2'></BsGoogle>
                         Sign In With Google</Button>
                     <Button variant="outline-secondary" className='d-block mb-2'>
