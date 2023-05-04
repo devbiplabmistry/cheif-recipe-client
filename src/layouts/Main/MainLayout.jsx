@@ -32,7 +32,7 @@ const Main = () => {
             <div className="navbar mx-auto ">
                 <Navbar></Navbar>
             </div>
-            <div className="banner-wrapper">
+            <div className="banner-wrapper sm:text-start md:text-center">
                 <Carousel>
                     <Carousel.Item>
                         <img
@@ -40,7 +40,7 @@ const Main = () => {
                             src={banner1}
                             alt="First slide"
                         />
-                        <Carousel.Caption>
+                        <Carousel.Caption className=''>
                             <h3>Ultimate Cheese BurgerFirst slide label</h3>
                             <p>A handful of simple ingredients typify the fresh, vibrant flavors of Greek cooking.Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
                         </Carousel.Caption>

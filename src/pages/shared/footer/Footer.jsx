@@ -10,7 +10,7 @@ import { FaPhone, FaPhoneAlt } from "react-icons/fa";
 const Footer = () => {
     return (
         <Container>
-            <div className="footer-wrapper d-flex justify-content-between">
+            <div className="footer-wrapper md:d-flex sm:mb-5 justify-content-between">
                 <div className="left-footer">
                     <h3 className='text-white fw-normal fs-3'>Subscribe</h3>
                     <p className='text-white'>Register and get notified about all the news <br /> & updates before it gets too late.</p>

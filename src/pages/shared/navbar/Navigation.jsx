@@ -20,8 +20,8 @@ const Navigation = () => {
 
     }
     return (
-        <Container className='justify-content-center mt-5 mb-5'>
-            <Navbar bg="" variant="white" className='d-flex' >
+        <Container className='justify-content-center mt-5 mb-5 '>
+            <Navbar bg="" variant="white" className='md:d-flex ' >
                 <Nav className="mx-auto flex-grow-1 me-5">
                     <Link to="/main" className='fw-regular text-decoration-none me-2 fs-5 text-danger'>BurgerHat</ Link>
                     <Link to="/main" className='fw-regular text-decoration-none me-2 fs-5 text-danger'>Home</Link>
