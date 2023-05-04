@@ -6,5 +6,5 @@
     ***Extra two section is created which is tips and tricks and copyright part.
   
 
-live client site link :
-live server site link :
+live client site link :https://resonant-cascaron-7f4c25.netlify.app/
+client site code link :
