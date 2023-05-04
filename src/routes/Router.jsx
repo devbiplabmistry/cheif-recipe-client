@@ -40,7 +40,7 @@ const router = createBrowserRouter([
   {
     path: '/chef/:id',
     element:<PrivetRouter><ChiefLayout></ChiefLayout></PrivetRouter>,
-    loader: ({params}) => fetch(`http://localhost:5000/recipee/${params.id}`)
+    loader: ({params}) => fetch(`https://chef-hunter-devbiplabmistry.vercel.app/recipee/${params.id}`)
   },
   {
     path:"/blog",

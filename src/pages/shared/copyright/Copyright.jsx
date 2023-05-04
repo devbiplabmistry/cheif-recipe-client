@@ -5,7 +5,7 @@ import { Container } from 'react-bootstrap';
 const Copyright = () => {
     return (
        <Container>
-        <div className="copy-right d-flex md:justify-content-center sm:justify-content-left bg-dark text-center p-4">
+        <div className="copy-right d-flex justify-content-center bg-dark text-center p-4">
             <p className='fw-normal fs-6 text-white'>Copyright ©2023 | All Rights Reserved.</p>
         </div>
         
