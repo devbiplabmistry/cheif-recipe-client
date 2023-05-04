@@ -4,9 +4,11 @@ import { Button, Container, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { BsGithub, BsGoogle } from "react-icons/bs";
 import { AuthContext } from '../../shared/authProvide/AuthProvider';
+import { useState } from 'react';
 
 
 const Register = () => {
+    const [error,setError] =useState()
     const {register} =useContext(AuthContext)
     const handleRegister =(event) =>{
         event.preventDefault()
@@ -24,6 +26,7 @@ const Register = () => {
             const errorCode = error.code;
             const errorMessage = error.message;
             console.log(errorMessage);
+            setError(errorMessage)
          
           });
 
@@ -54,6 +57,7 @@ const Register = () => {
                     Submit
                 </Button>
                 <Link to="/login" className=' text-decoration-none fs-5 ms-2'>Already Have an Account ? </Link>
+                <p className='text-danger'>{error}</p>
             </Form>
         </Container>
     );
