@@ -3,6 +3,7 @@
   and also when we click Favourite button then a alert show "this is added in favourite List".
    ***a privet route is created when we logged in then only we see chief recipee page only otherwise it redirect to the login page.
     ***when we logged in only we see logo of user otherwise we see login.
+    ***Extra two section is created which is tips and tricks and copyright part.
   
 
 live client site link :

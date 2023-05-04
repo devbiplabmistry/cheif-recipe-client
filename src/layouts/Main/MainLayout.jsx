@@ -22,7 +22,7 @@ const Main = () => {
     }, [])
     return (
         <Container>
-            <div className="logo d-flex mt-5 mb-5">
+            <div className="logo d-flex mt-5 mb-5 mx-auto">
                 <img src={logo} alt="logo" />
                 <div className="logo-content">
                     <h2>BURGER HAT</h2>
@@ -83,25 +83,22 @@ const Main = () => {
                     </Carousel.Item>
                 </Carousel>
             </div>
-
             <div className="chefs">
                 <h3>Our Chefs</h3>
-                <div className="card-wrapper mt-5 mb-5">
+                <div className="card-wrapper mt-5 mb-5 sm:grid-col-1">
                     {
                         chef.map(c => <Chefs key={c._id} chefs={c}></Chefs>)
                     }
                 </div>
-
             </div>
             <div className="tips">
-              <div className="tips-content text-center">
-              <h3 className='fw-normal fs-3 text-white'>Natural ingredients and tasty food</h3>
-                <p className='fw-normal fs-5 text-white'>Some Trendy And Useful Tricks</p>
-                <Button variant="danger">TIPS AND TRICKS</Button>
-              </div>
+                <div className="tips-content text-center">
+                    <h3 className='fw-normal fs-3 text-white'>Natural ingredients and tasty food</h3>
+                    <p className='fw-normal fs-5 text-white'>Some Trendy And Useful Tricks</p>
+                    <Button variant="danger">TIPS AND TRICKS</Button>
+                </div>
             </div>
-
-            <div className="our-special-dishes mt-5">
+            <div className="our-special-dishes mt-5 md:d-flex">
                 <h2>Our Special Dishes</h2>
                 <Carousel >
                     <Carousel.Item>
@@ -141,8 +138,6 @@ const Main = () => {
                         </Carousel.Caption>
                     </Carousel.Item>
                 </Carousel>
-
-
             </div>
             <div className="footer mt-5">
                 <Footer></Footer>
@@ -150,14 +145,6 @@ const Main = () => {
             <div className="copy-right">
                 <Copyright></Copyright>
             </div>
-
-
-
-
-
-
-
-
         </Container>
     );
 };
