@@ -20,7 +20,6 @@ const Main = () => {
             .then(res => res.json())
             .then(data => setChef(data))
     }, [])
-    console.log(chef);
     return (
         <Container>
             <div className="logo d-flex mt-5 mb-5">

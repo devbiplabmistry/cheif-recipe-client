@@ -1,7 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
 import Navigation from '../../pages/shared/navbar/Navigation';
-
 import { Container } from 'react-bootstrap';
 import ChiefRecipee from '../../pages/Chief/ChiefRecipee';
 
@@ -14,10 +13,7 @@ const ChiefLayout = () => {
                     <h3 className='text-center fw-normal fs-3 mb-5 mt-5'>This is Recipee Page</h3>
                     <ChiefRecipee></ChiefRecipee>
                 </div>
-
             </div>
-
-
         </Container>
 
 

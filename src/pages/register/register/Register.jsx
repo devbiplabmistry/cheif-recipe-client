@@ -18,7 +18,7 @@ const Register = () => {
         register(email,password)
         .then((userCredential) => {
             const user = userCredential.user;
-            console.log('user created sucessfully',user);
+            alert('user created sucessfully');
             form.reset()
         
           })

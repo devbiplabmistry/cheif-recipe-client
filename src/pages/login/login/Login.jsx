@@ -2,12 +2,14 @@
 import React, { useContext, useState } from 'react';
 import { Button, Container, Form } from 'react-bootstrap';
 import { BsGithub, BsGoogle } from 'react-icons/bs';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../shared/authProvide/AuthProvider';
 
 const Login = () => {
-    const Navigate = useNavigate()
     const [error,setError] =useState()
+    const location =useLocation()
+    const navigate = useNavigate()
+    const from = location.state?.from?.pathname || '/main';
     const { createEmailAndPassword, googleSignIn,githubSignIn } = useContext(AuthContext)
     const handleEmailPassLogin = (event) => {
         event.preventDefault()
@@ -17,23 +19,21 @@ const Login = () => {
         createEmailAndPassword(email, password)
             .then((userCredential) => {
                 const user = userCredential.user;
-                Navigate('/main')
-            })
-            .catch((error) => {
-                const errorCode = error.code;
+                navigate(from, { replace: true }) 
+              })
+              .catch((error) => {
                 const errorMessage = error.message;
-                console.log(errorMessage);
                 setError(errorMessage)
-            });
+              });
     }
     const handleGoogleSignIn = () => {
         googleSignIn()
             .then((result) => {
-                console.log(result);
+        
             }).catch((error) => {
                 const errorCode = error.code;
                 const errorMessage = error.message;
-                console.log(errorMessage);
+               
                 setError(errorMessage)
             });
     }
@@ -42,11 +42,11 @@ const Login = () => {
         githubSignIn()
         .then((result) => {
             const user = result.user;  
-            console.log(user);
+           
           }).catch((error) => {
             const errorCode = error.code;
             const errorMessage = error.message;
-            console.log(errorMessage);
+            
             setError(errorMessage)
           });
     }

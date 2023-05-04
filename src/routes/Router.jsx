@@ -10,6 +10,8 @@ import ChiefLayout from '../layouts/chiefLayout/ChiefLayout';
 import ChiefRecipee from '../pages/Chief/ChiefRecipee';
 import BlogPage from '../pages/blog/BlogPage';
 import WrongPages from '../pages/shared/404Page/WrongPages';
+import PrivetRouter from './PrivetRouter/PrivetRouter';
+
 
 
 const router = createBrowserRouter([
@@ -34,10 +36,10 @@ const router = createBrowserRouter([
   {
     path: "main",
     element: <Main></Main>,
-  },
+  },  
   {
     path: '/chef/:id',
-    element: <ChiefLayout></ChiefLayout>,
+    element:<PrivetRouter><ChiefLayout></ChiefLayout></PrivetRouter>,
     loader: ({params}) => fetch(`http://localhost:5000/recipee/${params.id}`)
   },
   {
