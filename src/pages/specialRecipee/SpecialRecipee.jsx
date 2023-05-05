@@ -2,6 +2,9 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
 import { Button, Card, Container } from 'react-bootstrap';
+import Rating from 'react-rating';
+import { AiFillStar } from "react-icons/ai";
+import {FiStar } from "react-icons/fi";
 
 const SpecialRecipee = ({ recipee }) => {
     const [hide ,setHide] =useState(false)
@@ -20,6 +23,12 @@ const SpecialRecipee = ({ recipee }) => {
                 <Card.Body>
                     <Card.Title>{recipee_name}</Card.Title>
                     <p>Rattings :{ratting}</p>
+                    <Rating className='me-2'
+                        placeholderRating={3.5}
+                        emptySymbol={<FiStar className='text-warning'></FiStar>}
+                        placeholderSymbol={<AiFillStar className='text-warning'></AiFillStar>}
+                        fullSymbol={<AiFillStar className='text-warning'></AiFillStar>}
+                    />
                     <Card.Text>
                         <h4>Indegredients :</h4>
                         <p>{ingredientsOne}</p>
